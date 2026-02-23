@@ -8,7 +8,7 @@ function SignIn() {
 
   const handleLogin = () => {
     // ADMIN LOGIN
-    if (email === "admin@demo.com" && password === "admin123") {
+    if (email === "admin@example.com" && password === "Admin123") {
       alert("Admin Login Successful!");
       localStorage.setItem("loggedIn", "admin");
       navigate("/admin/dashboard");
