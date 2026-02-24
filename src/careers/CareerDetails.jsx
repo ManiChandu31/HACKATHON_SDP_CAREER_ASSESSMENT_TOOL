@@ -80,44 +80,52 @@ function CareerDetails() {
   const career = careerData[id];
 
   if (!career) {
-    return <p>Career not found.</p>;
+    return (
+      <div className="page-shell">
+        <div className="page-card">
+          <p>Career not found.</p>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div>
-      <h2 className="form-title">Career Details: {career.title}</h2>
+    <div className="page-shell">
+      <div className="page-card">
+        <h2 className="form-title">Career Details: {career.title}</h2>
 
-      <p>{career.description}</p>
+        <p>{career.description}</p>
 
-      <h3>Required Skills</h3>
-      <ul>
-        {career.skills.map((s, i) => (
-          <li key={i}>{s}</li>
-        ))}
-      </ul>
+        <h3 className="section-title">Required Skills</h3>
+        <ul>
+          {career.skills.map((s, i) => (
+            <li key={i}>{s}</li>
+          ))}
+        </ul>
 
-      <h3>Responsibilities</h3>
-      <ul>
-        {career.responsibilities.map((r, i) => (
-          <li key={i}>{r}</li>
-        ))}
-      </ul>
+        <h3 className="section-title">Responsibilities</h3>
+        <ul>
+          {career.responsibilities.map((r, i) => (
+            <li key={i}>{r}</li>
+          ))}
+        </ul>
 
-      <h3>Average Salary</h3>
-      <p>{career.salary}</p>
+        <h3 className="section-title">Average Salary</h3>
+        <p>{career.salary}</p>
 
-      <h3>Best Suited For</h3>
-      <p>{career.bestFor}</p>
+        <h3 className="section-title">Best Suited For</h3>
+        <p>{career.bestFor}</p>
 
-      <h3>Recommended Education</h3>
-      <ul>
-        {career.education.map((e, i) => (
-          <li key={i}>{e}</li>
-        ))}
-      </ul>
+        <h3 className="section-title">Recommended Education</h3>
+        <ul>
+          {career.education.map((e, i) => (
+            <li key={i}>{e}</li>
+          ))}
+        </ul>
 
-      <h3>Growth Opportunities</h3>
-      <p>{career.growth}</p>
+        <h3 className="section-title">Growth Opportunities</h3>
+        <p>{career.growth}</p>
+      </div>
     </div>
   );
 }

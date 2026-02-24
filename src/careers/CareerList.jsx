@@ -10,21 +10,23 @@ function CareerList() {
   ];
 
   return (
-    <div>
-      <h2 className="form-title">Career Options</h2>
+    <div className="page-shell">
+      <div className="page-card">
+        <h2 className="form-title">Career Options</h2>
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
+        <ul className="clean-list">
         {careers.map((career) => (
           <li
             key={career.id}
-            className="career-item"
+            className="career-item list-item-card"
             onClick={() => navigate(`/career-details/${career.id}`)}
             style={{ cursor: "pointer", margin: "10px 0" }}
           >
             <strong>• {career.title}</strong>
           </li>
         ))}
-      </ul>
+        </ul>
+      </div>
     </div>
   );
 }
